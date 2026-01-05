@@ -21,8 +21,7 @@ const WeatherBackground = ({ condition }) => {
         Smoke: Haze,
         Haze,
         Fog: Haze,
-// default: video    };
-    const getBackground = ()=>{
+}    const getBackground = ()=>{
         if(!condition) return gifs.default;
         const weatherType = condition.main;
         const asset = gifs[weatherType];
