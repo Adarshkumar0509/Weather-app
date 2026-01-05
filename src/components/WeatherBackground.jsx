@@ -22,7 +22,7 @@ const WeatherBackground = ({ condition }) => {
         Haze,
         Fog: Haze,
 }   
-          cons tgetBackground = ()=>{
+  const getBackground = ()=>{
         if(!condition) return gifs.default;
         const weatherType = condition.main;
         const asset = gifs[weatherType];
