@@ -118,10 +118,8 @@ const App = () => {
               <div className='flex flex-wrap justify-around mt-6'>
                 {[
                   [HumidityIcon, 'Humidity', `${weather.main.humidity}%
-                  (${getHumidityValue(weather.main.humidity)})`],
+                  (${getHumidityValue(weather.main.humidity)})`]
 
-                  [WindIcon, 'Wind', `${weather.wind.speed} m/s ${weather.wind.deg ?
-                    `(${getWindDirection(weather.main.humidity)})` : ''}`],
 
                   [VisibilityIcon, 'Visibility', getVisibilityValue(weather.visibility)]
                 ].map(([Icon, label, value]) => (
