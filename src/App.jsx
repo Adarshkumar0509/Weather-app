@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import WeatherBackground from './components/WeatherBackground'
 import { convertTemperature, getHumidityValue, getVisibilityValue, getWindDirection } from './components/Helper';
-import { HumidityIcon,WindIcon, SunriseIcon, SunsetIcon, VisibilityIcon } from './components/Icons';
-
+import { HumidityIcon, SunriseIcon, SunsetIcon, VisibilityIcon } from './components/Icons';
 const App = () => {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState('');
