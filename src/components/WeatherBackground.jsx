@@ -8,7 +8,8 @@ import ClearNight from '../assets/ClearNight.gif';
 import CloudsDay from '../assets/CloudsDay.gif';
 import CloudsNight from '../assets/CloudsNight.gif';
 import Haze from '../assets/Haze.gif';
-import video from '../assets/video1.mp4'
+// import video from '../assets/video1.mp4';
+const video = null;
 
 const WeatherBackground = ({ condition }) => {
     const gifs = {

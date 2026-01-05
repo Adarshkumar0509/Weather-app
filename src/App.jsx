@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import WeatherBackground from './components/WeatherBackground'
 import { convertTemperature, getHumidityValue, getVisibilityValue, getWindDirection } from './components/Helper';
-import { HumidityIcon,WindIcon, SunriseIcon, SunsetIcon, VisibilityIcon } from './components/Icons';
+import { HumidityIcon, SunriseIcon, SunsetIcon } from './components/Icons';
 
 const App = () => {
   const [weather, setWeather] = useState(null);
@@ -24,7 +24,7 @@ const App = () => {
       return () => clearTimeout(timer);
     }
     setSuggestion([]);
-  }, [city.weather])
+  }, [city, weather])
 
   //FETCHES 5 LOCATIONS SUGGESTIONS FROM API AND UPDATES
   const fetchSuggestions = async (query) => {
@@ -120,11 +120,6 @@ const App = () => {
                 {[
                   [HumidityIcon, 'Humidity', `${weather.main.humidity}%
                   (${getHumidityValue(weather.main.humidity)})`],
-
-                  [WindIcon, 'Wind', `${weather.wind.speed} m/s ${weather.wind.deg ?
-                    `(${getWindDirection(weather.main.humidity)})` : ''}`],
-
-                  [VisibilityIcon, 'Visibility', getVisibilityValue(weather.visibility)]
                 ].map(([Icon, label, value]) => (
                   <div key={label} className='flex flex-col items-center m-2'>
                     <Icon />
