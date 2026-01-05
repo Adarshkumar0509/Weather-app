@@ -8,8 +8,7 @@ import ClearNight from '../assets/ClearNight.gif';
 import CloudsDay from '../assets/CloudsDay.gif';
 import CloudsNight from '../assets/CloudsNight.gif';
 import Haze from '../assets/Haze.gif';
-import video from '../assets/video1.mp4'
-
+// import video from '../assets/video1.mp4'
 const WeatherBackground = ({ condition }) => {
     const gifs = {
         Thunderstorm,
@@ -22,8 +21,7 @@ const WeatherBackground = ({ condition }) => {
         Smoke: Haze,
         Haze,
         Fog: Haze,
-        default: video
-    };
+// default: video    };
     const getBackground = ()=>{
         if(!condition) return gifs.default;
         const weatherType = condition.main;
@@ -37,13 +35,7 @@ const WeatherBackground = ({ condition }) => {
     const background = getBackground();
     return(
         <div className='fixed z-0 inset-0 overflow-hidden'>
-            {background === video ? (
-                <video autoPlay loop muted className='w-full h-full object-cover opacity-100 pointer-events-none animate-fade-in'>
-                    <source src={video} type='video/mp4' />
-                </video>
-            ) : (
-                <img src={background} alt='Weather-bg' className='w-full h-full object-cover opacity-20 pointer-events-none animate-fade-in' />
-            )}
+            <img src={background} alt='Weather-bg' className='w-full h-full object-cover opacity-20 pointer-events-none animate-fade-in' />
             <div className='inset-0 absolute bg-black/30'/>
         </div>
     )
